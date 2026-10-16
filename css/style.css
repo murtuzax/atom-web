@@ -1,0 +1,87 @@
+html, body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.atom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.proton {
+    height: 18px;
+    width: 18px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+/* .neutron {
+    height: 18px;
+    width: 18px;
+    background-color: grey;
+    border-radius: 50%;
+} */
+
+.shell {
+    height: var(--shell-size);
+    width: var(--shell-size);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: rotate var(--speed) linear infinite;
+}
+
+.electron {
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+    border-radius: 50%;
+
+    margin-top: -7.5px;
+    margin-left: -7.5px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: rotate(var(--angle)) translate(var(--radius));
+}
+
+@keyframes rotate {
+from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.mz-container {
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.mz-container a {
+    color: white;
+    text-decoration: none;
+}
